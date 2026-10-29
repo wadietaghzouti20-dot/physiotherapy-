@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Demandez un rendez-vous auprès de votre cabinet de kinésithérapie en quelques étapes simples.">
+  <title>Prendre rendez-vous | Cabinet de kinésithérapie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#booking">Passer au formulaire</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Accueil du cabinet">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" role="img"><path d="M20 7v26M7 20h26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-copy"><strong id="clinic-name">${p.clinic}</strong><small>RENDEVO · Rendez-vous simplifiés</small></span>
+    </a>
+    <a class="header-contact" id="header-phone" href="tel:" aria-label="Appeler le cabinet">
+      <span class="contact-icon" aria-hidden="true">↗</span>
+      <span><small>Une question ?</small><strong>Nous contacter</strong></span>
+    </a>
+  </header>
+
+  <main id="booking" class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> KINÉSITHÉRAPIE · RENDEZ-VOUS EN LIGNE</p>
+      <h1 id="page-title">Retrouvez le mouvement,<br><span>à votre rythme.</span></h1>
+      <p class="intro-copy">Demandez votre séance de kinésithérapie en quelques étapes. Choisissez le soin, la date et un créneau disponible.</p>
+      <div class="trust-row">
+        <span><span class="trust-check" aria-hidden="true">✓</span> Simple et rapide</span>
+        <span><span class="trust-check" aria-hidden="true">✓</span> Données confidentielles</span>
+      </div>
+    </section>
+
+    <section class="booking-card" aria-labelledby="form-heading">
+      <div class="card-topline">
+        <div>
+          <p class="card-kicker">RÉSERVATION EN LIGNE</p>
+          <h2 id="form-heading">Commençons</h2>
+        </div>
+        <span class="step-counter" id="step-counter">Étape 1 sur 5</span>
+      </div>
+
+      <div class="progress-track" role="progressbar" aria-label="Progression du formulaire" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" id="progress-track">
+        <span id="progress-fill"></span>
+      </div>
+
+      <div id="form-alert" class="form-alert" role="alert" hidden></div>
+
+      <form id="appointment-form" novalidate>
+        <div class="form-step is-active" data-step="1" aria-labelledby="step-title-1">
+          <p class="step-label">01 / VOTRE RENDEZ-VOUS</p>
+          <h3 id="step-title-1">Quel soin souhaitez-vous ?</h3>
+          <p class="step-description">Choisissez le motif qui correspond le mieux à votre besoin.</p>
+          <div class="choice-grid" id="service-options">
+<label class="choice-card"><input type="radio" name="service" value="Bilan kinésithérapique" required><span class="choice-icon" aria-hidden="true">✳</span><span class="choice-text"><strong>Bilan kinésithérapique</strong><small>Première évaluation et objectifs de prise en charge</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Rééducation fonctionnelle" required><span class="choice-icon" aria-hidden="true">◈</span><span class="choice-text"><strong>Rééducation fonctionnelle</strong><small>Mobilité et gestes du quotidien</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Rééducation post-opératoire" required><span class="choice-icon" aria-hidden="true">＋</span><span class="choice-text"><strong>Rééducation post-opératoire</strong><small>Suivi après intervention, selon prescription</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Douleurs du dos et du cou" required><span class="choice-icon" aria-hidden="true">◎</span><span class="choice-text"><strong>Douleurs du dos et du cou</strong><small>Prise en charge musculo-squelettique</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Rééducation sportive" required><span class="choice-icon" aria-hidden="true">↗</span><span class="choice-text"><strong>Rééducation sportive</strong><small>Récupération et retour progressif à l’activité</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Séance de suivi" required><span class="choice-icon" aria-hidden="true">◌</span><span class="choice-text"><strong>Séance de suivi</strong><small>Poursuite d’un programme déjà commencé</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Rééducation respiratoire" required><span class="choice-icon" aria-hidden="true">⌁</span><span class="choice-text"><strong>Rééducation respiratoire</strong><small>Selon indication du cabinet</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+<label class="choice-card"><input type="radio" name="service" value="Autre motif" required><span class="choice-icon" aria-hidden="true">⋯</span><span class="choice-text"><strong>Autre motif</strong><small>Précisez votre demande à l’étape suivante</small></span><span class="choice-arrow" aria-hidden="true">›</span></label>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2" aria-labelledby="step-title-2" hidden>
+          <p class="step-label">02 / DATE ET HORAIRE</p>
+          <h3 id="step-title-2">Quand êtes-vous disponible ?</h3>
+          <p class="step-description">Choisissez une date pour afficher les horaires réellement disponibles.</p>
+          <div class="field-group">
+            <label for="preferred-date">Date souhaitée <span class="required">*</span></label>
+            <input id="preferred-date" name="preferredDate" type="date" required>
+            <small class="field-hint">Les dates passées ne sont pas acceptées.</small>
+          </div>
+          <div class="field-group">
+            <label for="preferred-time">Heure disponible <span class="required">*</span></label>
+            <select id="preferred-time" name="preferredTime" required disabled>
+              <option value="">Choisissez d’abord une date</option>
+            </select>
+            <small class="field-hint" id="slot-status" aria-live="polite">Choisissez une date pour afficher les heures disponibles.</small>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3" aria-labelledby="step-title-3" hidden>
+          <p class="step-label">03 / VOS COORDONNÉES</p>
+          <h3 id="step-title-3">Comment vous joindre ?</h3>
+          <p class="step-description">Ces informations nous permettent de vous recontacter au sujet de votre demande.</p>
+          <div class="field-group">
+            <label for="full-name">Nom et prénom <span class="required">*</span></label>
+            <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Ex. Amine Benali" minlength="2" maxlength="100" required>
+          </div>
+          <div class="field-group">
+            <label for="phone">Numéro de téléphone <span class="required">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex. 0550 12 34 56" maxlength="25" required>
+            <small class="field-hint">Un numéro algérien ou international valide.</small>
+          </div>
+          <div class="field-group">
+            <label for="email">Adresse e-mail <span class="required">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" maxlength="150" required>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="4" aria-labelledby="step-title-4" hidden>
+          <p class="step-label">04 / INFORMATIONS COMPLÉMENTAIRES</p>
+          <h3 id="step-title-4">Souhaitez-vous ajouter quelque chose ?</h3>
+          <p class="step-description">Ne partagez pas de détails médicaux sensibles dans ce champ.</p>
+          <div class="field-group">
+            <label for="notes">Message au cabinet <span class="optional">(facultatif)</span></label>
+            <textarea id="notes" name="notes" rows="5" maxlength="1000" placeholder="Une précision utile pour organiser votre rendez-vous…"></textarea>
+            <div class="field-footer"><small class="field-hint">1 000 caractères maximum.</small><small id="notes-count">0 / 1000</small></div>
+          </div>
+          <div class="privacy-note"><span aria-hidden="true">⌑</span><p>Vos informations sont utilisées uniquement pour traiter votre demande de rendez-vous.</p></div>
+        </div>
+
+        <div class="form-step" data-step="5" aria-labelledby="step-title-5" hidden>
+          <p class="step-label">05 / VÉRIFICATION</p>
+          <h3 id="step-title-5">Confirmez votre rendez-vous</h3>
+          <p class="step-description">Vérifiez vos informations et l’heure choisie avant de confirmer.</p>
+          <dl class="review-list" id="review-list"></dl>
+          <label class="consent-row"><input type="checkbox" id="privacy-consent" name="privacyConsent" required><span>J’accepte que le cabinet utilise ces informations pour traiter ma demande de rendez-vous. <span class="required">*</span></span></label>
+          <p class="disclaimer">Votre créneau sera réservé immédiatement si les informations sont valides et que la disponibilité n’a pas changé.</p>
+        </div>
+
+        <div class="form-actions" id="form-actions">
+          <button class="button button-secondary" id="back-button" type="button" disabled>← Retour</button>
+          <button class="button button-primary" id="next-button" type="button">Continuer <span aria-hidden="true">→</span></button>
+          <button class="button button-primary" id="submit-button" type="submit" hidden>Confirmer mon rendez-vous <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="secure-footnote"><span aria-hidden="true">⌑</span> Réservation en ligne · Confirmation immédiate</p>
+      </form>
+
+      <section id="success-panel" class="success-panel" aria-labelledby="success-title" hidden>
+        <div class="success-symbol" aria-hidden="true">✓</div>
+        <p class="card-kicker">RÉSERVATION CONFIRMÉE</p>
+        <h3 id="success-title">Votre rendez-vous est confirmé.</h3>
+        <p id="success-message">Votre rendez-vous est confirmé. Conservez votre référence de réservation.</p>
+        <p class="reference-line" id="request-reference" hidden></p>
+        <button class="button button-secondary" id="new-request-button" type="button">Faire une nouvelle demande</button>
+      </section>
+    </section>
+    <p class="emergency-note"><strong>Besoin d’une aide urgente ?</strong> Ce formulaire n’est pas destiné aux urgences. En cas d’urgence médicale, contactez les services d’urgence locaux.</p>
+  </main>
+
+  <footer class="site-footer">
+    <span id="footer-clinic-name">Cabinet médical</span>
+    <span>Propulsé par <strong>RENDEVO</strong></span>
+    <span>© <span id="current-year"></span> · Tous droits réservés</span>
+  </footer>
+</body>
+</html>
