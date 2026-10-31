@@ -115,6 +115,8 @@ h1 span { color: var(--teal); }
 .success-panel > p:not(.card-kicker) { color: var(--muted); font-size: 12px; line-height: 1.8; }
 .success-panel .button { width: 100%; margin-top: 14px; }
 .reference-line { padding: 9px; border-radius: 7px; background: #f4f7f7; font-weight: 700; }
+.cancel-note { margin: 14px 0 0; padding: 12px; border: 1px solid var(--line); border-radius: 9px; color: #66747e; background: #f8fafb; font-size: 11px; line-height: 1.7; }
+.cancel-note a { color: var(--teal-dark); font-weight: 800; text-underline-offset: 3px; }
 .emergency-note { grid-column: 1 / -1; margin: -7px 0 0; padding: 14px 17px; color: #68767d; background: #edf1f2; border-radius: 10px; font-size: 11px; line-height: 1.7; }
 .emergency-note strong { color: #44525a; }
 .site-footer { width: min(1000px, calc(100% - 40px)); display: flex; justify-content: space-between; gap: 15px; margin: 27px auto 0; padding: 20px 0 28px; border-top: 1px solid #e3e8ea; color: #89949b; font-size: 10px; }
