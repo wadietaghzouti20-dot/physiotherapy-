@@ -4,5 +4,5 @@
 window.BOOKING_CONFIG = Object.freeze({
   clinicName: "Cabinet de kinésithérapie",
   clinicPhone: "",
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbw8WwLgJp7hhkPvYuW2GIRWatT-Qsgd91bMq4wHgbdjdiplYjgaTr8QvKAPOqnPW0h4/exec"
+  appsScriptUrl: ""
 });
