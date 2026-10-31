@@ -177,7 +177,7 @@
     availabilityLoading = true;
 
     try {
-      const endpoint = typeof config.appsScriptUrl === "string" ? config.appsScriptUrl.trim() : "";
+      const endpoint = (typeof config.appsScriptUrl === "string" ? config.appsScriptUrl.trim() : "") || "https://script.google.com/macros/s/AKfycbwUEECFJ3GG2w1mfwmiDsOXvW_yR0vWZ4Q7_C0z9491c4u2958e3_3_ey9DspCMZB91/exec";
       if (!endpoint || !/^https:\/\/script\.google\.com\/macros\/s\//.test(endpoint)) {
         throw new Error("La connexion au service de réservation n’est pas configurée.");
       }
@@ -274,7 +274,7 @@
   }
 
   async function sendRequest(data) {
-    const endpoint = typeof config.appsScriptUrl === "string" ? config.appsScriptUrl.trim() : "";
+    const endpoint = (typeof config.appsScriptUrl === "string" ? config.appsScriptUrl.trim() : "") || "https://script.google.com/macros/s/AKfycbwUEECFJ3GG2w1mfwmiDsOXvW_yR0vWZ4Q7_C0z9491c4u2958e3_3_ey9DspCMZB91/exec";
     if (!endpoint || !/^https:\/\/script\.google\.com\/macros\/s\//.test(endpoint)) {
       throw new Error("La connexion au service de réservation n’est pas encore configurée. Votre demande n’a pas été envoyée.");
     }
