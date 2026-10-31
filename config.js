@@ -1,8 +1,6 @@
-/* Configuration du cabinet. Ajoutez l'URL Apps Script après le déploiement du backend.
- * Ne placez jamais de mot de passe, clé privée ou secret dans ce fichier public.
- */
+/* Configuration du cabinet. URL du backend RENDEVO déployé. */
 window.BOOKING_CONFIG = Object.freeze({
   clinicName: "Cabinet de kinésithérapie",
   clinicPhone: "",
-  appsScriptUrl: ""
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbwUEECFJ3GG2w1mfwmiDsOXvW_yR0vWZ4Q7_C0z9491c4u2958e3_3_ey9DspCMZB91/exec"
 });
