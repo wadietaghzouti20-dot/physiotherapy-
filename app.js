@@ -337,6 +337,12 @@
         ref.textContent = "Référence de réservation : " + String(result.reference);
         ref.hidden = false;
       }
+      const cancelNote = document.getElementById("cancel-note");
+      const cancelLink = document.getElementById("cancel-link");
+      if (result.cancelUrl && cancelNote && cancelLink) {
+        cancelLink.href = result.cancelUrl;
+        cancelNote.hidden = false;
+      }
       successPanel.scrollIntoView({ block: "nearest" });
     } catch (error) {
       showAlert(error instanceof Error ? error.message : "Une erreur est survenue. Veuillez réessayer.");
